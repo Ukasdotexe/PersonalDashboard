@@ -13,3 +13,5 @@ build/
 .idea/
 
 package.json
+
+package-lock.json
