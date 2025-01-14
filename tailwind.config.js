@@ -3,19 +3,21 @@ module.exports = {
   content: ["./src/dashboard.html"],
   theme: {
     extend: {
-      colors:{
-        'primary': '#0075ff',
-        'primary-shade': '#0d69d5',
-        'orange-color': '#f59e0b',
-        'green-color': '#22c55e',
-        'red-color': '#f44336',
-        'grey-color': '#888',
+      colors: {
+        primary: "#0075ff",
+        "primary-shade": "#0d69d5",
+        "orange-color": "#f59e0b",
+        "green-color": "#22c55e",
+        "red-color": "#f44336",
+        "grey-color": "#888",
       },
-      fontFamily:{
-        roboto:['"Roboto"', 'sans-serif']
-      }
+      fontFamily: {
+        roboto: ['"Roboto"', "sans-serif"],
+      },
+      screens: {
+        "md-down": { max: "768px" }, // Applies to medium and smaller screens
+      },
     },
   },
   plugins: [],
-}
-
+};

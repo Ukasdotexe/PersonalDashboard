@@ -1,16 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Hub</title>
-  <!-- Main Css File -->
-  <link rel="stylesheet" href="./main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Hub</title>
+    <!-- Main Css File -->
+    <link rel="stylesheet" href="./main.css" />
 
-  <!-- Font Awesome Icons-->
-  <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-</head>
-<body >
- <h1 class="text-primary">hello</h1>
-</body>
+    <!-- Font Awesome Icons-->
+
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+  </head>
+  <body class="font-roboto">
+    <div class="flex h-screen">
+      <nav class="bg-red-6f00 px-2.5 py-2.5 md:px-5 md:py-5">
+        <p class="text-center font-medium mb-4">Ukas</p>
+        <hr class="hidden mb-6 h-1 bg-black md:block" />
+        <ul class="flex flex-col gap-y-1 w-[33px] md:w-[180px] overflow-hidden">
+          <li>
+            <a
+              class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-chart-bar fa-fw"></i>
+              <span class="text-base font-normal">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-solid fa-gear fa-fw"></i>
+              <span class="text-base font-normal">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-user fa-fw"></i>
+              <span class="text-base font-normal">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-solid fa-diagram-project fa-fw"></i>
+              <span class="text-base font-normal">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-solid fa-graduation-cap fa-fw"></i>
+              <span class="text-base font-normal">Courses</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-circle-user fa-fw"></i>
+              <span class="text-base font-normal">Friends</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-file fa-fw"></i>
+              <span class="text-base font-normal">Files</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-credit-card fa-fw"></i>
+              <span class="text-base font-normal">Plans</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <main class="bg-[#f3f3f3] flex-1"></main>
+    </div>
+  </body>
 </html>
