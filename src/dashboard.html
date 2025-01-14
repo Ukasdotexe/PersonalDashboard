@@ -86,7 +86,33 @@
           </li>
         </ul>
       </nav>
-      <main class="bg-[#f3f3f3] flex-1"></main>
+      <main class="bg-[#f3f3f3] flex-1 pl-2">
+        <section
+          class="flex items-center justify-between bg-red-5000 p-4 bg-white"
+        >
+          <div class="relative">
+            <input
+              type="search"
+              placeholder="Search..."
+              class="pl-7 py-2.5 pr-2.5 rounded-md border w-44 border-grey-color focus:w-56 transition-width duration-300 ease-in-out focus:outline-none focus:placeholder-transparent"
+            />
+            <i
+              class="fa fa-search fa-chart-bar fa-fw absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500"
+            ></i>
+          </div>
+          <div class="relative flex items-center gap-x-4">
+            <i class="relative fa-regular fa-bell fa-lg cursor-pointer"> </i>
+            <img
+              class="w-8 cursor-pointer"
+              src="/img/avatar.png"
+              alt="profile-picture"
+            />
+            <span
+              class="inline-block w-2.5 h-2.5 rounded-full absolute top-0 left-3 bg-red-500"
+            ></span>
+          </div>
+        </section>
+      </main>
     </div>
   </body>
 </html>
