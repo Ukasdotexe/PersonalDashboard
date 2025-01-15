@@ -39,8 +39,10 @@ const loadHtmlChild = async function (path) {
 
 const coursesEl = document.getElementById("courses");
 const filesEl = document.getElementById("files");
+const plansEl = document.getElementById("plans");
 
 coursesEl.addEventListener("click", () => loadHtmlChild("courses.html"));
 filesEl.addEventListener("click", () => loadHtmlChild("files.html"));
+plansEl.addEventListener("click", () => loadHtmlChild("plans.html"));
 
-loadHtmlChild("files.html");
+// loadHtmlChild("files.html");
