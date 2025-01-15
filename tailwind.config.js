@@ -17,6 +17,15 @@ module.exports = {
       screens: {
         "md-down": { max: "768px" }, // Applies to medium and smaller screens
       },
+      keyframes: {
+        bounceY: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" }, // Moves down by 10px
+        },
+      },
+      animation: {
+        bounceInfinite: "bounceY 0.8s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

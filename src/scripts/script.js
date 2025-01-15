@@ -30,10 +30,17 @@ const loadHtmlChild = async function (path) {
       return;
     }
 
+    containerElement.innerHTML = "";
     containerElement.innerHTML = text;
   } catch (error) {
     console.log(error);
   }
 };
 
-loadHtmlChild("courses.html");
+const coursesEl = document.getElementById("courses");
+const filesEl = document.getElementById("files");
+
+coursesEl.addEventListener("click", () => loadHtmlChild("courses.html"));
+filesEl.addEventListener("click", () => loadHtmlChild("files.html"));
+
+loadHtmlChild("files.html");
