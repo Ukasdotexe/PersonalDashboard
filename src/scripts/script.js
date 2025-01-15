@@ -40,9 +40,15 @@ const loadHtmlChild = async function (path) {
 const coursesEl = document.getElementById("courses");
 const filesEl = document.getElementById("files");
 const plansEl = document.getElementById("plans");
+const friendsEl = document.getElementById("friends");
 
-coursesEl.addEventListener("click", () => loadHtmlChild("courses.html"));
-filesEl.addEventListener("click", () => loadHtmlChild("files.html"));
-plansEl.addEventListener("click", () => loadHtmlChild("plans.html"));
+const attackClickEvent = function (element, path) {
+  element.addEventListener("click", () => loadHtmlChild(path));
+};
+
+attackClickEvent(coursesEl, "courses.html");
+attackClickEvent(filesEl, "files.html");
+attackClickEvent(plansEl, "plans.html");
+attackClickEvent(friendsEl, "friends.html");
 
 // loadHtmlChild("files.html");
