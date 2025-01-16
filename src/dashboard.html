@@ -16,12 +16,13 @@
   </head>
   <body class="font-roboto">
     <div class="flex h-screen">
-      <nav class="bg-red-6f00 px-2.5 py-2.5 md:px-5 md:py-5">
+      <nav id="sidenav" class="bg-red-6f00 px-2.5 py-2.5 md:px-5 md:py-5">
         <p class="text-center font-medium mb-4">Ukas</p>
         <hr class="hidden mb-6 h-1 bg-black md:block" />
         <ul class="flex flex-col gap-y-1 w-[33px] md:w-[180px] overflow-hidden">
           <li>
             <a
+              id="dashboard"
               class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
             >
               <i class="fa-regular fa-chart-bar fa-fw"></i>
@@ -30,6 +31,7 @@
           </li>
           <li>
             <a
+              id="settings"
               class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
             >
               <i class="fa-solid fa-gear fa-fw"></i>
@@ -38,6 +40,7 @@
           </li>
           <li>
             <a
+              id="profile"
               class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
             >
               <i class="fa-regular fa-user fa-fw"></i>
@@ -117,7 +120,7 @@
             ></span>
           </div>
         </section>
-        <section class="bg-[#f3f3f3]" id="children-container"></section>
+        <section class="bg-[#f3f3f3] pb-10" id="children-container"></section>
       </main>
     </div>
     <script src="./scripts/script.js"></script>

@@ -1,0 +1,312 @@
+<h1 class="relative m-5 text-4xl font-medium tracking-wider">
+  <span>Settings</span>
+  <span class="w-28 h-[3px] absolute left-1 -bottom-2 bg-white"></span>
+  <span class="w-12 h-[3px] absolute left-1 -bottom-2 bg-black"></span>
+</h1>
+
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-3 my-10 mx-5">
+  <!-- Site Control -->
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-medium text-3xl mb-2">Site Control</h2>
+    <p class="text-grey-color mb-4">
+      Control The Website If There Is Maintenance
+    </p>
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class="text-base mb-1">Website Control</h3>
+        <p class="text-grey-color">Open/Close Website And Type The Reason</p>
+      </div>
+      <!-- toggle -->
+      <label
+        aria-checked="false"
+        class="toggle relative w-[78px] h-[32px] rounded-full bg-[#ccc] cursor-pointer"
+      >
+        <div
+          class="w-6 h-6 flex items-center justify-center font-extrabold rounded-full cursor-pointer absolute top-1 left-1 transition duration-300 ease-in-out bg-white"
+        >
+          <i class="fa-solid fa-xmark text-grey-color cursor-pointer"></i>
+        </div>
+      </label>
+    </div>
+    <textarea
+      type="text"
+      class="block w-full h-52 p-2.5 placeholder:text-grey-color border rounded-md mt-3 resize-none outline-none"
+      placeholder="Close Message Content"
+    >
+    </textarea>
+  </div>
+
+  <!-- General Info -->
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-medium text-3xl mb-2">General Info</h2>
+    <p class="text-grey-color mb-4">General Information About Your Account</p>
+    <form class="flex flex-col gap-4">
+      <div>
+        <label class="text-grey-color" for="firstName">First Name</label>
+        <input
+          class="block w-full p-2.5 mt-2 placeholder:font-light border-[1px] border-[#ccc] rounded-md outline-none"
+          type="text"
+          placeholder="First Name"
+          id="firstName"
+        />
+      </div>
+      <div>
+        <label class="text-grey-color" for="lastName">Last Name</label>
+        <input
+          class="block w-full p-2.5 mt-2 placeholder:font-light border-[1px] border-[#ccc] rounded-md outline-none"
+          type="text"
+          placeholder="Last Name"
+          id="lastName"
+        />
+      </div>
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex-1">
+          <label class="text-grey-color" for="email">Email</label>
+          <input
+            class="block w-full p-2.5 mt-2 bg-[#f0f4f8] border-[1px] border-[#ccc] rounded-md outline-none placeholder:font-light cursor-not-allowed"
+            type="email"
+            placeholder="siq@.com"
+            disabled
+            id="email"
+          />
+        </div>
+        <a class="mt-8 text-primary cursor-pointer" href="#">Change</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Security Info -->
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-medium text-3xl mb-2">Security Info</h2>
+    <p class="text-grey-color mb-4">Security Information About Your Account</p>
+
+    <div class="flex justify-between mb-4">
+      <div class="flex-1">
+        <p>Password</p>
+        <spa class="text-grey-color text-sm">Last Change On 25/10/2021</spa>
+      </div>
+      <a
+        class="bg-primary text-white px-2.5 py-1 self-end hover:bg-primary-shade rounded-md"
+        href="#"
+        >Change</a
+      >
+    </div>
+    <hr />
+
+    <div class="flex justify-between my-4">
+      <div class="flex-1">
+        <p>Two-Factor Authentication</p>
+        <spa class="text-grey-color text-sm">Enable/Disable The Feature</spa>
+      </div>
+      <!-- toggle -->
+      <label
+        aria-checked="false"
+        class="toggle relative w-[78px] h-[32px] rounded-full bg-[#ccc] cursor-pointer"
+      >
+        <div
+          class="w-6 h-6 flex items-center justify-center font-extrabold rounded-full cursor-pointer absolute top-1 left-1 transition duration-300 ease-in-out bg-white"
+        >
+          <i class="fa-solid fa-xmark text-grey-color cursor-pointer"></i>
+        </div>
+      </label>
+    </div>
+    <hr />
+
+    <div class="flex justify-between my-4">
+      <div class="flex-1">
+        <p>Devices</p>
+        <spa class="text-grey-color text-sm">Check The Login Devices List</spa>
+      </div>
+      <a class="bg-[#eee] px-2.5 py-1 self-end rounded-md" href="#">Devices</a>
+    </div>
+  </div>
+
+  <!-- Social Info -->
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-medium text-3xl mb-2">Social Info</h2>
+    <p class="text-grey-color mb-4">Social Media Information</p>
+    <form id="social-media-username-form" class="flex flex-col gap-3">
+      <div class="flex">
+        <input
+          id="twitter-username"
+          placeholder="Twitter username"
+          class="w-full pl-2.5 pr-0.5 outline-none border border-l-0 border-[#ddd] bg-[#f6f6f6] rounded-r-md order-last"
+          type="text"
+        />
+
+        <div
+          class="w-10 h-10 flex items-center justify-center bg-[#f6f6f6] border border-[#ddd] rounded-l-md"
+        >
+          <i
+            id="twitter-icon"
+            class="fa-brands fa-twitter text-grey-color transiton delay-100 ease-in-out"
+          ></i>
+        </div>
+      </div>
+      <div class="flex">
+        <input
+          id="facebook-username"
+          placeholder="Facebook username"
+          class="w-full pl-2.5 pr-0.5 outline-none border border-l-0 border-[#ddd] bg-[#f6f6f6] rounded-r-md order-last"
+          type="text"
+        />
+
+        <div
+          class="w-10 h-10 flex items-center justify-center bg-[#f6f6f6] border border-[#ddd] rounded-l-md"
+        >
+          <i
+            id="facebook-icon"
+            class="fa-brands fa-facebook-f text-grey-color transiton delay-100 ease-in-out"
+          ></i>
+        </div>
+      </div>
+      <div class="flex">
+        <input
+          id="linkedin-username"
+          placeholder="linkedin username"
+          class="w-full pl-2.5 pr-0.5 outline-none border border-l-0 border-[#ddd] bg-[#f6f6f6] rounded-r-md order-last"
+          type="text"
+        />
+
+        <div
+          class="w-10 h-10 flex items-center justify-center bg-[#f6f6f6] border border-[#ddd] rounded-l-md"
+        >
+          <i
+            id="linkedin-icon"
+            class="fa-brands fa-linkedin text-grey-color transiton delay-100 ease-in-out"
+          ></i>
+        </div>
+      </div>
+      <div class="flex">
+        <input
+          id="youtube-username"
+          placeholder="Youtube username"
+          class="w-full pl-2.5 pr-0.5 outline-none border border-l-0 border-[#ddd] bg-[#f6f6f6] rounded-r-md order-last"
+          type="text"
+        />
+
+        <div
+          class="w-10 h-10 flex items-center justify-center bg-[#f6f6f6] border border-[#ddd] rounded-l-md"
+        >
+          <i
+            id="youtube-icon"
+            class="fa-brands fa-youtube text-grey-color transiton delay-100 ease-in-out"
+          ></i>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Widgets Control -->
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-medium text-3xl mb-2">Widgets Control</h2>
+    <p class="text-grey-color mb-4">Show/Hide Widgets</p>
+    <div class="flex flex-col gap-3">
+      <label class="flex items-center gap-x-4">
+        <input
+          class="w-5 h-5 text-xl rounded-[10px] cursor-pointer"
+          type="checkbox"
+          checked
+        />
+        <span class="cursor-pointer text-xl select-none">Quick Drafts</span>
+      </label>
+
+      <label class="flex items-center gap-x-4">
+        <input
+          class="w-5 h-5 text-xl rounded-[10px] cursor-pointer"
+          type="checkbox"
+          checked
+        />
+        <span class="cursor-pointer text-xl select-none"
+          >Tickets Statistics</span
+        >
+      </label>
+
+      <label class="flex items-center gap-x-4">
+        <input
+          class="w-5 h-5 text-xl rounded-[10px] cursor-pointer"
+          type="checkbox"
+          checked
+        />
+        <span class="cursor-pointer text-xl select-none">Latest News</span>
+      </label>
+      <label class="flex items-center gap-x-4">
+        <input
+          class="w-5 h-5 text-xl rounded-[10px] cursor-pointer"
+          type="checkbox"
+          checked
+        />
+        <span class="cursor-pointer text-xl select-none">Latest Tasks</span>
+      </label>
+      <label class="flex items-center gap-x-4">
+        <input
+          class="w-5 h-5 text-xl rounded-[10px] cursor-pointer"
+          type="checkbox"
+          checked
+        />
+        <span class="cursor-pointer text-xl select-none">Top Search Items</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Backup Manager -->
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-medium text-3xl mb-2">Backup Manager</h2>
+    <p class="text-grey-color mb-4">Control Backup Time And Location</p>
+
+    <!-- backup Options -->
+    <div class="flex flex-col gap-1 mb-5">
+      <label class="flex items-center gap-5">
+        <input
+          class="w-5 h-5 text-xl rounded-[10px] cursor-pointer"
+          type="radio"
+          name="frequency"
+        />
+        <span class="cursor-pointer text-xl select-none">Monthly</span>
+      </label>
+
+      <label class="flex items-center gap-5">
+        <input
+          class="w-5 h-5 text-xl rounded-[10px] cursor-pointer"
+          type="radio"
+          name="frequency"
+          id="daily"
+        />
+        <span class="cursor-pointer text-xl select-none">Daily</span>
+      </label>
+
+      <label class="flex items-center gap-5">
+        <input
+          class="w-5 h-5 text-xl rounded-[10px] cursor-pointer"
+          type="radio"
+          name="frequency"
+          id="weekly"
+        />
+        <span class="cursor-pointer text-xl select-none">Weekly</span>
+      </label>
+    </div>
+    <hr />
+
+    <div id="backup-option-container" class="grid grid-cols-3 gap-3 mt-5">
+      <div
+        class="box flex flex-col items-center justify-center gap-1 h-20 border-[2px] border-[#f6f6f6] rounded-lg cursor-pointer"
+      >
+        <i class="fa-solid fa-server"></i>
+        <span>Megaman</span>
+      </div>
+      <div
+        class="box flex flex-col items-center justify-center gap-1 h-20 border-[2px] border-[#f6f6f6] rounded-lg cursor-pointer"
+      >
+        <i class="fa-solid fa-server"></i>
+        <span>Zero</span>
+      </div>
+      <div
+        class="box flex flex-col items-center justify-center gap-1 h-20 border-[2px] border-[#f6f6f6] rounded-lg cursor-pointer"
+      >
+        <i class="fa-solid fa-server"></i>
+        <span>Sigma</span>
+      </div>
+    </div>
+    <hr />
+  </div>
+</section>

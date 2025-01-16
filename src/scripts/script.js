@@ -8,7 +8,7 @@ const pathMap = {
   plans: "plans.html",
   friends: "friends.html",
   projects: "projects.html",
-  // settings: "Settings.html",
+  settings: "Settings.html",
 };
 
 const formContainer = document.getElementById("social-media-username-form");
