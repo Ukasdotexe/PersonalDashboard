@@ -103,3 +103,18 @@ backUpOptionsContainer.addEventListener("click", (event) => {
     clickedIcon.classList.add("text-primary");
   }
 });
+
+const toggleEls = document.querySelectorAll(".toggle");
+
+toggleEls.forEach((toggleEl) => {
+  toggleEl.addEventListener("click", function () {
+    const toggleCircle = this.firstElementChild;
+    const toggleIcon = toggleCircle.firstElementChild;
+
+    this.classList.toggle("bg-primary");
+    toggleCircle.classList.toggle("translate-x-11");
+
+    toggleIcon.classList.toggle("fa-check");
+    toggleIcon.classList.toggle("fa-xmark");
+  });
+});
