@@ -11,23 +11,11 @@ const pathMap = {
   // settings: "Settings.html",
 };
 
-const attachEventListeners = (containerId, mapping) => {
-  const containerEl = document.getElementById(containerId);
-  // console.log(containerEl);
+const formContainer = document.getElementById("social-media-username-form");
 
-  containerEl.addEventListener("click", (event) => {
-    let target = event.target;
-
-    if (target.tagName != "a") target = target.closest("a");
-
-    if (mapping[target.id]) {
-      loadHtmlChild(mapping[target.id]);
-    }
-  });
-};
-
-// Initialize the event listeners by passing the container ID and the mapping
-attachEventListeners("sidenav", pathMap);
+const backUpOptionsContainer = document.getElementById(
+  "backup-option-container"
+);
 
 const loadHtmlChild = async function (path) {
   try {
@@ -67,26 +55,24 @@ const loadHtmlChild = async function (path) {
     console.log(error);
   }
 };
+const attachEventListeners = (containerId, mapping) => {
+  const containerEl = document.getElementById(containerId);
 
-const coursesEl = document.getElementById("courses");
-const filesEl = document.getElementById("files");
-const plansEl = document.getElementById("plans");
-const friendsEl = document.getElementById("friends");
-const projectEl = document.getElementById("projects");
+  containerEl.addEventListener("click", (event) => {
+    let target = event.target;
 
-const attackClickEvent = function (element, path) {
-  element.addEventListener("click", () => loadHtmlChild(path));
+    if (target.tagName != "a") target = target.closest("a");
+
+    if (mapping[target.id]) {
+      loadHtmlChild(mapping[target.id]);
+    }
+  });
 };
 
-// attackClickEvent(coursesEl, "courses.html");
-// attackClickEvent(filesEl, "files.html");
-// attackClickEvent(plansEl, "plans.html");
-// attackClickEvent(friendsEl, "friends.html");
-// attackClickEvent(projectEl, "projects.html");
+// Initialize the event listeners by passing the container ID and the mapping
+attachEventListeners("sidenav", pathMap);
 
 // loadHtmlChild("files.html");
-
-const formContainer = document.getElementById("social-media-username-form");
 
 formContainer.addEventListener("focusin", (event) => {
   if (event.target.tagName === "INPUT") {
@@ -99,5 +85,21 @@ formContainer.addEventListener("focusout", (event) => {
   if (event.target.tagName === "INPUT") {
     const icon = event.target.nextElementSibling.querySelector("i");
     icon.classList.add("text-grey-color");
+  }
+});
+
+backUpOptionsContainer.addEventListener("click", (event) => {
+  if (event.target.closest(".box")) {
+    // Remove the styles from all boxes
+    backUpOptionsContainer.querySelectorAll(".box").forEach((box) => {
+      box.classList.remove("border-primary", "text-primary");
+      box.querySelector("i")?.classList.remove("text-primary");
+    });
+
+    const clickedBox = event.target.closest(".box");
+    clickedBox.classList.add("border-primary", "text-primary");
+
+    const clickedIcon = clickedBox.querySelector("i");
+    clickedIcon.classList.add("text-primary");
   }
 });
