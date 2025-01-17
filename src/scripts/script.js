@@ -8,7 +8,8 @@ const pathMap = {
   plans: "plans.html",
   friends: "friends.html",
   projects: "projects.html",
-  settings: "Settings.html",
+  settings: "settings.html",
+  profile: "profile.html",
 };
 
 const formContainer = document.getElementById("social-media-username-form");
@@ -74,35 +75,38 @@ attachEventListeners("sidenav", pathMap);
 
 // loadHtmlChild("files.html");
 
-formContainer.addEventListener("focusin", (event) => {
-  if (event.target.tagName === "INPUT") {
-    const icon = event.target.nextElementSibling.querySelector("i");
-    icon.classList.remove("text-grey-color");
-  }
-});
+if (formContainer)
+  formContainer.addEventListener("focusin", (event) => {
+    if (event.target.tagName === "INPUT") {
+      const icon = event.target.nextElementSibling.querySelector("i");
+      icon.classList.remove("text-grey-color");
+    }
+  });
 
-formContainer.addEventListener("focusout", (event) => {
-  if (event.target.tagName === "INPUT") {
-    const icon = event.target.nextElementSibling.querySelector("i");
-    icon.classList.add("text-grey-color");
-  }
-});
+if (formContainer)
+  formContainer.addEventListener("focusout", (event) => {
+    if (event.target.tagName === "INPUT") {
+      const icon = event.target.nextElementSibling.querySelector("i");
+      icon.classList.add("text-grey-color");
+    }
+  });
 
-backUpOptionsContainer.addEventListener("click", (event) => {
-  if (event.target.closest(".box")) {
-    // Remove the styles from all boxes
-    backUpOptionsContainer.querySelectorAll(".box").forEach((box) => {
-      box.classList.remove("border-primary", "text-primary");
-      box.querySelector("i")?.classList.remove("text-primary");
-    });
+if (backUpOptionsContainer)
+  backUpOptionsContainer.addEventListener("click", (event) => {
+    if (event.target.closest(".box")) {
+      // Remove the styles from all boxes
+      backUpOptionsContainer.querySelectorAll(".box").forEach((box) => {
+        box.classList.remove("border-primary", "text-primary");
+        box.querySelector("i")?.classList.remove("text-primary");
+      });
 
-    const clickedBox = event.target.closest(".box");
-    clickedBox.classList.add("border-primary", "text-primary");
+      const clickedBox = event.target.closest(".box");
+      clickedBox.classList.add("border-primary", "text-primary");
 
-    const clickedIcon = clickedBox.querySelector("i");
-    clickedIcon.classList.add("text-primary");
-  }
-});
+      const clickedIcon = clickedBox.querySelector("i");
+      clickedIcon.classList.add("text-primary");
+    }
+  });
 
 const toggleEls = document.querySelectorAll(".toggle");
 
