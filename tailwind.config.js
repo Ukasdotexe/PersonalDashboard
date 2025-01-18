@@ -11,6 +11,7 @@ module.exports = {
         "red-color": "#f44336",
         "grey-color": "#888",
       },
+
       fontFamily: {
         roboto: ['"Roboto"', "sans-serif"],
       },
@@ -22,9 +23,14 @@ module.exports = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" }, // Moves down by 10px
         },
+        bgToggle: {
+          "0%, 100%": { backgroundColor: "transparent" },
+          "50%": { backgroundColor: "#0075ff " },
+        },
       },
       animation: {
         bounceInfinite: "bounceY 0.8s ease-in-out infinite",
+        "bg-toggle": "bgToggle 2s infinite",
       },
     },
   },
