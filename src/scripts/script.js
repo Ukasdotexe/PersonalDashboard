@@ -10,6 +10,7 @@ const pathMap = {
   projects: "projects.html",
   settings: "settings.html",
   profile: "profile.html",
+  dashboard: "dashboard.html",
 };
 
 const formContainer = document.getElementById("social-media-username-form");
@@ -17,6 +18,9 @@ const formContainer = document.getElementById("social-media-username-form");
 const backUpOptionsContainer = document.getElementById(
   "backup-option-container"
 );
+const menuBtn = document.querySelector("#menu");
+const navMobile = document.getElementById("mobile");
+const overlay = document.querySelector("#overlay");
 
 const loadHtmlChild = async function (path) {
   try {
@@ -56,23 +60,36 @@ const loadHtmlChild = async function (path) {
     console.log(error);
   }
 };
+
 const attachEventListeners = (containerId, mapping) => {
   const containerEl = document.getElementById(containerId);
 
   containerEl.addEventListener("click", (event) => {
     let target = event.target;
 
-    if (target.tagName != "a") target = target.closest("a");
+    // Ensure we are targeting an <a> element, or its closest <a> ancestor
+    if (target.tagName !== "A") target = target.closest("a");
 
-    if (mapping[target.id]) {
-      loadHtmlChild(mapping[target.id]);
+    // Iterate over the class names of the target element
+    for (const className in mapping) {
+      // Check if the clicked element or its closest ancestor has the class
+      if (target.classList.contains(className)) {
+        loadHtmlChild(mapping[className]);
+        break; // Use the mapped value to load content
+        // Stop after finding the first matching class
+      }
     }
+    console.log(containerEl);
+
+    closeMenu();
   });
 };
 
 // Initialize the event listeners by passing the container ID and the mapping
 attachEventListeners("sidenav", pathMap);
+attachEventListeners("mobile", pathMap);
 
+// loadHtmlChild("dashboard.html");
 // loadHtmlChild("files.html");
 
 if (formContainer)
@@ -122,3 +139,31 @@ toggleEls.forEach((toggleEl) => {
     toggleIcon.classList.toggle("fa-xmark");
   });
 });
+
+// document.addEventListener("click", function () {
+//
+//   menu.classList.toggle("-translate-x-[100%]");
+// });
+
+// overlay.addEventListener("click", function () {
+//   navMobile.classList.toggle("-translate-x-[100%]");
+//   overlay.classList.toggle("hidden");
+//   document.body.classList.remove("overflow-y-hidden");
+// });
+
+function openMenu() {
+  navMobile.classList.remove("-translate-x-[100%]");
+  overlay.classList.remove("hidden");
+  document.body.classList.add("overflow-y-hidden");
+}
+function closeMenu() {
+  navMobile.classList.add("-translate-x-[100%]");
+  overlay.classList.add("hidden");
+  document.body.classList.remove("overflow-y-hidden");
+}
+menuBtn.addEventListener("click", openMenu);
+overlay.addEventListener("click", closeMenu);
+
+// document.querySelector(".dashboardP").addEventListener("click", function () {
+//   loadHtmlChild("dashboard.html");
+// });

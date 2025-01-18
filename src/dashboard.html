@@ -1,1246 +1,1000 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Hub</title>
-    <!-- Main Css File -->
-    <link rel="stylesheet" href="./main.css" />
+<h1 class="relative m-5 text-4xl font-medium tracking-wider">
+  <span>Profile</span>
+  <span class="w-28 h-[3px] absolute left-1 -bottom-2 bg-white"></span>
+  <span class="w-12 h-[3px] absolute left-1 -bottom-2 bg-black"></span>
+</h1>
 
-    <!-- Font Awesome Icons-->
+<section class="grid grid-cols-1 xl:grid-cols-2 gap-4 my-10 mx-5">
+  <!-- Welcome -->
+  <div class="bg-white rounded-lg">
+    <!-- youtube -->
 
-    <link
-      rel="stylesheet"
-      href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-    />
-  </head>
-  <body class="font-roboto">
-    <div class="flex h-screen">
-      <nav id="sidenav" class="bg-red-6f00 px-2.5 py-2.5 md:px-5 md:py-5">
-        <p class="text-center font-medium mb-4">Ukas</p>
-        <hr class="hidden mb-6 h-1 bg-black md:block" />
-        <ul class="flex flex-col gap-y-1 w-[33px] md:w-[180px] overflow-hidden">
-          <li>
-            <a
-              id="dashboard"
-              class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
-            >
-              <i class="fa-regular fa-chart-bar fa-fw"></i>
-              <span class="text-base font-normal">Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a
-              id="settings"
-              class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
-            >
-              <i class="fa-solid fa-gear fa-fw"></i>
-              <span class="text-base font-normal">Settings</span>
-            </a>
-          </li>
-          <li>
-            <a
-              id="profile"
-              class="flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
-            >
-              <i class="fa-regular fa-user fa-fw"></i>
-              <span class="text-base font-normal">Profile</span>
-            </a>
-          </li>
-          <li>
-            <a
-              id="projects"
-              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
-            >
-              <i class="fa-solid fa-diagram-project fa-fw"></i>
-              <span class="text-base font-normal">Projects</span>
-            </a>
-          </li>
-          <li>
-            <a
-              id="courses"
-              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
-            >
-              <i class="fa-solid fa-graduation-cap fa-fw"></i>
-              <span class="text-base font-normal">Courses</span>
-            </a>
-          </li>
-          <li>
-            <a
-              id="friends"
-              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
-            >
-              <i class="fa-regular fa-circle-user fa-fw"></i>
-              <span class="text-base font-normal">Friends</span>
-            </a>
-          </li>
-          <li>
-            <a
-              id="files"
-              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
-            >
-              <i class="fa-regular fa-file fa-fw"></i>
-              <span class="text-base font-normal">Files</span>
-            </a>
-          </li>
-          <li>
-            <a
-              id="plans"
-              class="flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
-            >
-              <i class="fa-regular fa-credit-card fa-fw"></i>
-              <span class="text-base font-normal">Plans</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <main class="bg-[#f3f3f3] flex-1 pl-2">
-        <section
-          class="flex items-center justify-between bg-red-5000 p-4 bg-white"
-        >
-          <div class="relative">
-            <input
-              type="search"
-              placeholder="Search..."
-              class="pl-7 py-2.5 pr-2.5 rounded-md border w-44 border-grey-color focus:w-56 transition-width duration-300 ease-in-out focus:outline-none focus:placeholder-transparent"
-            />
-            <i
-              class="fa fa-search fa-chart-bar fa-fw absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500"
-            ></i>
-          </div>
-          <div class="relative flex items-center gap-x-4">
-            <i class="relative fa-regular fa-bell fa-lg cursor-pointer"> </i>
-            <img
-              class="w-8 cursor-pointer"
-              src="/img/avatar.png"
-              alt="profile-picture"
-            />
-            <span
-              class="inline-block w-2.5 h-2.5 rounded-full absolute top-0 left-3 bg-red-500"
-            ></span>
-          </div>
-        </section>
-        <section class="bg-[#f1f5f9] pb-10" id="children-container">
-          <h1 class="relative m-5 text-4xl font-medium tracking-wider">
-            <span>Profile</span>
-            <span
-              class="w-28 h-[3px] absolute left-1 -bottom-2 bg-white"
-            ></span>
-            <span
-              class="w-12 h-[3px] absolute left-1 -bottom-2 bg-black"
-            ></span>
-          </h1>
-
-          <section class="grid grid-cols-1 xl:grid-cols-2 gap-4 my-10 mx-5">
-            <!-- Welcome -->
-            <div class="bg-white rounded-lg">
-              <!-- youtube -->
-
-              <div class="relative p-5 bg-[#eee] mb-16 rounded-t-lg">
-                <div class="flex justify-between items-start">
-                  <div>
-                    <h2 class="font-bold text-2xl mb-2">Welcome</h2>
-                    <p class="text-grey-color">Ukas</p>
-                  </div>
-                  <div class="hidden w-52 md:block">
-                    <img class="w-full" src="/img/welcome.png" alt="welcome" />
-                  </div>
-                </div>
-                <div
-                  class="absolute top-full left-1/2 -translate-x-1/2 md:translate-x-0 md:left-5 -translate-y-1/2 w-20 h-20 p-1 border rounded-full bg-white cursor-pointer"
-                >
-                  <img
-                    class="w-full rounded-full"
-                    src="/img/team-04.png"
-                    at=""
-                  />
-                </div>
-              </div>
-
-              <div
-                class="grid grid-cols-1 md:grid-cols-3 gap-y-3 border-t border-b my-4 p-5"
-              >
-                <div class="bg-blufe-500 grid place-items-center">
-                  <div>
-                    <p class="font-normal mb-2 text-center">John Will</p>
-                    <p class="text-grey-color">Developer</p>
-                  </div>
-                </div>
-                <div class="bg-grefen-500 grid place-items-center">
-                  <div>
-                    <p class="font-normal mb-2 text-center">80</p>
-                    <p class="text-grey-color">Projects</p>
-                  </div>
-                </div>
-                <div class="bg-yellfow-500 grid place-items-center">
-                  <div>
-                    <p class="font-normal mb-2 text-center">$8500</p>
-                    <p class="text-grey-color">Earned</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="text-right pb-10 mr-2.5">
-                <a href="" class="px-2.5 py-1 bg-primary rounded-md text-white"
-                  >Profile</a
-                >
-              </div>
-            </div>
-
-            <!-- Quick Draft -->
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-3">Quick Draft</h2>
-              <p class="text-grey-color mb-5">Write A Draft For Your Ideas</p>
-
-              <!-- title -->
-              <input
-                placeholder="title"
-                class="w-full p-2.5 outline-none border-[#ddd] bg-[#f6f6f6] rounded-md order-last"
-                type="text"
-              />
-
-              <!-- Your thought -->
-              <textarea
-                type="text"
-                class="block w-full h-52 p-2.5 bg-[#f6f6f6] placeholder:text-grey-color rounded-md mt-3 mb-5 resize-none outline-none"
-                placeholder="Your thought"
-              ></textarea>
-
-              <div class="text-right pb-10">
-                <a href="" class="px-2.5 py-1 bg-primary rounded-md text-white"
-                  >Profile</a
-                >
-              </div>
-            </div>
-
-            <!-- Yearly Targets -->
-            <div class="flex flex-col gap-5 bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-3">Yearly Targets</h2>
-              <p class="text-grey-color mb-5">Targets Of The Year</p>
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-20 h-20 flex items-center justify-center bg-primary/20"
-                >
-                  <i class="fa-solid fa-dollar-sign fa-lg text-primary"></i>
-                </div>
-                <div class="flex-1">
-                  <span class="block text-grey-color mb-1">Money</span>
-                  <span class="block text-xl font-medium mb-2">$20.000</span>
-                  <div class="relative z-0 w-full h-1 bg-primary/20">
-                    <div class="absolute bg-primary h-full w-4/5"></div>
-                    <div
-                      class="absolute left-[80%] transform -translate-x-1/2 -translate-y-[130%] px-[5px] py-0.5 text-white bg-primary rounded-lg"
-                    >
-                      80%
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-20 h-20 flex items-center justify-center bg-orange-color/20"
-                >
-                  <i class="fa-solid fa-code fa-lg text-orange-color"></i>
-                </div>
-                <div class="flex-1">
-                  <span class="block text-grey-color mb-1"> Projects </span>
-                  <span class="block text-xl font-medium mb-2">24</span>
-                  <div class="relative z-0 w-full h-1 bg-orange-color/20">
-                    <div class="absolute bg-orange-color h-full w-[55%]"></div>
-                    <div
-                      class="absolute left-[55%] transform -translate-x-1/2 -translate-y-[130%] px-[5px] py-0.5 text-white bg-orange-color rounded-lg"
-                    >
-                      55%
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-20 h-20 flex items-center justify-center bg-green-color/20"
-                >
-                  <i class="fa-solid fa-user fa-lg text-green-color"></i>
-                </div>
-                <div class="flex-1">
-                  <span class="block text-grey-color mb-1">Money</span>
-                  <span class="block text-xl font-medium mb-2">$20.000</span>
-                  <div class="relative z-0 w-full h-1 bg-green-color/20">
-                    <div class="absolute bg-green-color h-full w-4/5"></div>
-                    <div
-                      class="absolute left-[75%] transform -translate-x-1/2 -translate-y-[130%] px-[5px] py-0.5 text-white bg-green-color rounded-lg"
-                    >
-                      75%
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tickets Statistics -->
-
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-3">Tickets Statistics</h2>
-              <p class="text-grey-color mb-5">
-                Everything About Support Tickets
-              </p>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div
-                  class="flex flex-col items-center justify-center gap-2 p-5 border-[2px] rounded-md"
-                >
-                  <i
-                    class="fa-regular fa-rectangle-list text-orange-color fa-2x"
-                  ></i>
-                  <span class="text-3xl font-medium">2500</span>
-                  <span class="text-grey-color">Total</span>
-                </div>
-
-                <div
-                  class="flex flex-col items-center justify-center gap-2 p-5 border-[2px] rounded-md"
-                >
-                  <i class="fa-regular fa-spinner text-primary fa-2x"></i>
-                  <span class="text-3xl font-medium">1000</span>
-                  <span class="text-grey-color">Pending</span>
-                </div>
-
-                <div
-                  class="flex flex-col items-center justify-center gap-2 p-5 border-[2px] rounded-md"
-                >
-                  <i
-                    class="fa-regular fa-circle-check text-green-color fa-2x"
-                  ></i>
-                  <span class="text-3xl font-medium">2500</span>
-                  <span class="text-grey-color">Closed</span>
-                </div>
-
-                <div
-                  class="flex flex-col items-center justify-center gap-2 p-5 border-[2px] rounded-md"
-                >
-                  <i
-                    class="fa-regular fa-rectangle-xmark text-red-color fa-2x"
-                  ></i>
-                  <span class="text-3xl font-medium">1000</span>
-                  <span class="text-grey-color">Deleted</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Latest News -->
-
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-3">Latest News</h2>
-              <p class="hidden text-grey-color mb-5 md:block">
-                Everything About Support Tickets
-              </p>
-              <div>
-                <div
-                  class="flex flex-col items-center md:flex-row pb-5 border-b"
-                >
-                  <div
-                    class="flex flex-col md:flex-row items-center gap-3 flex-1"
-                  >
-                    <div class="w-[100px] rounded-md">
-                      <img
-                        class="w-full rounded-md"
-                        src="/img/news-01.png"
-                        alt="news-01"
-                      />
-                    </div>
-
-                    <div class="text-center md:text-left">
-                      <span class="block text-lg font-medium"
-                        >Created SASS Section</span
-                      >
-                      <span class="inline-block text-grey-color text-base mb-2"
-                        >New SASS Examples & Tutorials</span
-                      >
-                    </div>
-                  </div>
-                  <div class="px-2.5 py-1 bg-[#f6f6f6] text-base rounded-md">
-                    3 Days Ago
-                  </div>
-                </div>
-
-                <div
-                  class="flex flex-col items-center md:flex-row pb-5 mt-5 border-b"
-                >
-                  <div
-                    class="flex flex-col md:flex-row items-center gap-3 flex-1"
-                  >
-                    <div class="w-[100px] rounded-md">
-                      <img
-                        class="w-full rounded-md"
-                        src="/img/news-02.png"
-                        alt="news-02"
-                      />
-                    </div>
-
-                    <div class="text-center md:text-left">
-                      <span class="block text-lg font-medium"
-                        >Changed The Design</span
-                      >
-                      <span class="inline-block text-grey-color text-base mb-2"
-                        >A Brand New Website Design</span
-                      >
-                    </div>
-                  </div>
-                  <div class="px-2.5 py-1 bg-[#f6f6f6] text-base rounded-md">
-                    5 Days Ago
-                  </div>
-                </div>
-
-                <div
-                  class="flex flex-col items-center md:flex-row pb-5 mt-5 border-b"
-                >
-                  <div
-                    class="flex flex-col md:flex-row items-center gap-3 flex-1"
-                  >
-                    <div class="w-[100px] rounded-md">
-                      <img
-                        class="w-full rounded-md"
-                        src="/img/news-03.png"
-                        alt="news-01"
-                      />
-                    </div>
-
-                    <div class="text-center md:text-left">
-                      <span class="block text-lg font-medium"
-                        >Team Increased</span
-                      >
-                      <span class="inline-block text-grey-color text-base mb-2"
-                        >3 Developers Joined The Team</span
-                      >
-                    </div>
-                  </div>
-                  <div class="px-2.5 py-1 bg-[#f6f6f6] text-base rounded-md">
-                    3 Days Ago
-                  </div>
-                </div>
-
-                <div
-                  class="flex flex-col items-center md:flex-row pb-5 mt-5 border-b"
-                >
-                  <div
-                    class="flex flex-col md:flex-row items-center gap-3 flex-1"
-                  >
-                    <div class="w-[100px] rounded-md">
-                      <img
-                        class="w-full rounded-md"
-                        src="/img/news-04.png"
-                        alt="news-01"
-                      />
-                    </div>
-
-                    <div class="text-center md:text-left">
-                      <span class="block text-lg font-medium"
-                        >Added Payment Gateway</span
-                      >
-                      <span class="inline-block text-grey-color text-base mb-2"
-                        >Many New Payment Gateways Added</span
-                      >
-                    </div>
-                  </div>
-                  <div class="px-2.5 py-1 bg-[#f6f6f6] text-base rounded-md">
-                    9 Days Ago
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Latest Tasks -->
-
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-3">Latest Tasks</h2>
-              <div class="flex justify-between items-center border-b pb-5 mb-5">
-                <div class="">
-                  <h3 class="font-medium text-lg">Record One New Video</h3>
-                  <p class="text-grey-color">
-                    Record Python Create Exe Project
-                  </p>
-                </div>
-                <i
-                  class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
-                ></i>
-              </div>
-              <div class="flex justify-between items-center border-b pb-5 mb-5">
-                <div class="">
-                  <h3 class="font-medium text-lg">Write Article</h3>
-                  <p class="text-grey-color">
-                    Write Low Level vs High Level Languages
-                  </p>
-                </div>
-                <i
-                  class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
-                ></i>
-              </div>
-              <div class="flex justify-between items-center border-b pb-5 mb-5">
-                <div class="">
-                  <h3 class="font-medium text-lg">Finish Project</h3>
-                  <p class="text-grey-color">
-                    Publish Academy Programming Project
-                  </p>
-                </div>
-                <i
-                  class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
-                ></i>
-              </div>
-              <div class="flex justify-between items-center border-b pb-5 mb-5">
-                <div class="">
-                  <h3 class="font-medium text-lg opacity-40">
-                    Attend The Meeting
-                  </h3>
-                  <p
-                    class="text-grey-color opacity-40 underline underline-offset-4"
-                  >
-                    Attend The Project Business Analysis Meeting
-                  </p>
-                </div>
-                <i
-                  class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
-                ></i>
-              </div>
-              <div class="flex justify-between items-center border-b pb-5 mb-5">
-                <div class="">
-                  <h3 class="font-medium text-lg">Finish Lesson</h3>
-                  <p class="text-grey-color">Finish Teaching Flex Box</p>
-                </div>
-                <i
-                  class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
-                ></i>
-              </div>
-            </div>
-
-            <!-- Top Search Items -->
-
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-3">Top Search Items</h2>
-
-              <ul class="flex flex-col gap-5">
-                <li class="flex justify-between text-grey-color text-xl mb-3">
-                  <span>Keyword</span>
-                  <span>Search Count</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Programming</span>
-                  <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">220</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>JavaScript</span>
-                  <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">180</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>PHP</span>
-                  <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">160</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Code</span>
-                  <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">145</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Design</span>
-                  <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">110</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Logic</span>
-                  <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">95</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Latest Uploads -->
-
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-3">Latest Uploads</h2>
-              <ul
-                class="flex items-center justify-between border-b pb-2.5 mb-2.5"
-              >
-                <li class="flex items-center gap-3">
-                  <div class="w-10 h-10">
-                    <img class="w-full" src="/img/pdf.svg" alt="" />
-                  </div>
-                  <div class="flex flex-col">
-                    <span>Project-Overview.pdf</span>
-                    <span class="text-grey-color">Alice</span>
-                  </div>
-                </li>
-                <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">1.7mb</span>
-              </ul>
-              <ul
-                class="flex items-center justify-between border-b pb-2.5 mb-2.5"
-              >
-                <li class="flex items-center gap-3">
-                  <div class="w-10 h-10">
-                    <img class="w-full" src="/img/avi.svg" alt="" />
-                  </div>
-                  <div class="flex flex-col">
-                    <span>Sample-Video.avi</span>
-                    <span class="text-grey-color">Bob</span>
-                  </div>
-                </li>
-                <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">8.3mb</span>
-              </ul>
-              <ul
-                class="flex items-center justify-between border-b pb-2.5 mb-2.5"
-              >
-                <li class="flex items-center gap-3">
-                  <div class="w-10 h-10">
-                    <img class="w-full" src="/img/psd.svg" alt="" />
-                  </div>
-                  <div class="flex flex-col">
-                    <span>Creative-Design.psd</span>
-                    <span class="text-grey-color">Chris</span>
-                  </div>
-                </li>
-                <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">12.4mb</span>
-              </ul>
-              <ul
-                class="flex items-center justify-between border-b pb-2.5 mb-2.5"
-              >
-                <li class="flex items-center gap-3">
-                  <div class="w-10 h-10">
-                    <img class="w-full" src="/img/zip.svg" alt="" />
-                  </div>
-                  <div class="flex flex-col">
-                    <span>Compressed-Files.zip</span>
-                    <span class="text-grey-color">Dana</span>
-                  </div>
-                </li>
-                <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">15.2mb</span>
-              </ul>
-              <ul
-                class="flex items-center justify-between border-b pb-2.5 mb-2.5"
-              >
-                <li class="flex items-center gap-3">
-                  <div class="w-10 h-10">
-                    <img class="w-full" src="/img/dll.svg" alt="" />
-                  </div>
-                  <div class="flex flex-col">
-                    <span>Library-Files.dll</span>
-                    <span class="text-grey-color">Evan</span>
-                  </div>
-                </li>
-                <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">2.1mb</span>
-              </ul>
-              <ul
-                class="flex items-center justify-between border-b pb-2.5 mb-2.5"
-              >
-                <li class="flex items-center gap-3">
-                  <div class="w-10 h-10">
-                    <img class="w-full" src="/img/eps.svg" alt="" />
-                  </div>
-                  <div class="flex flex-col">
-                    <span>Vector-Art.eps</span>
-                    <span class="text-grey-color">Fiona</span>
-                  </div>
-                </li>
-                <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">9.6mb</span>
-              </ul>
-            </div>
-
-            <div class="relative bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-5">Latest Uploads</h2>
-
-              <ul class="flex flex-col gap-4">
-                <li class="flex items-center gap-3">
-                  <div
-                    class="relative flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
-                  >
-                    <span class="w-4 h-4 rounded-full bg-primary"></span>
-
-                    <div
-                      class="absolute w-4 h-5 -bottom-[22px] left-[9px] bg-white border-[2px] border-primary border-t-0 border-r-0 border-b-0"
-                    ></div>
-                  </div>
-                  <span class="text-lg">Got The Project</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div
-                    class="relative flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
-                  >
-                    <span class="w-4 h-4 rounded-full bg-primary"></span>
-                    <div
-                      class="absolute w-4 h-5 -bottom-[22px] left-[9px] bg-white border-[2px] border-primary border-t-0 border-r-0 border-b-0"
-                    ></div>
-                  </div>
-                  <span class="text-lg">Started The Project</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div
-                    class="relative flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
-                  >
-                    <span class="w-4 h-4 rounded-full bg-primary"></span>
-                    <div
-                      class="absolute w-4 h-5 -bottom-[22px] left-[9px] bg-white border-[2px] border-primary border-t-0 border-r-0 border-b-0"
-                    ></div>
-                  </div>
-                  <span class="text-lg">The Project About To Finish</span>
-                </li>
-                <li class="flex items-center gap-3 group">
-                  <div
-                    class="relative flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
-                  >
-                    <span
-                      class="w-4 h-4 rounded-full bg-primaryt animate-bg-toggle"
-                    ></span>
-                    <div
-                      class="absolute w-4 h-5 -bottom-[22px] left-[9px] bg-white border-[2px] border-primary border-t-0 border-r-0 border-b-0"
-                    ></div>
-                  </div>
-                  <span class="text-lg">Test The Project</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div
-                    class="flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
-                  >
-                    <span class="w-4 h-4 rounded-full bg-primaryt"></span>
-                  </div>
-                  <span class="text-lg">Finish The Project & Get Money</span>
-                </li>
-              </ul>
-              <div
-                class="hidden md:block absolute right-0 bottom-0 w-40 h-40 align-baseline opacity-10"
-              >
-                <img class="w-full" src="/img/project.png" alt="" />
-              </div>
-            </div>
-
-            <!-- Reminders -->
-
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-3">Reminders</h2>
-              <ul class="flex flex-col gap-4">
-                <li class="flex gap-4 items-center">
-                  <div class="w-6 h-6 bg-primary rounded-full"></div>
-                  <div
-                    class="flex flex-col gap-1 pl-2 border-l-2 border-primary"
-                  >
-                    <span class="text-sm font-bold">Check My Tasks List</span>
-                    <span class="text-grey-color"> 28/09/2022 - 12:00am </span>
-                  </div>
-                </li>
-                <li class="flex gap-4 items-center">
-                  <div class="w-6 h-6 bg-green-color rounded-full"></div>
-                  <div
-                    class="flex flex-col gap-1 pl-2 border-l-2 border-green-color"
-                  >
-                    <span class="text-sm font-bold">Check My Projects</span>
-                    <span class="text-grey-color"> 28/09/2022 - 12:00am </span>
-                  </div>
-                </li>
-                <li class="flex gap-4 items-center">
-                  <div class="w-6 h-6 bg-orange-color rounded-full"></div>
-                  <div
-                    class="flex flex-col gap-1 pl-2 border-l-2 border-orange-color"
-                  >
-                    <span class="text-sm font-bold">Call All My Clients</span>
-                    <span class="text-grey-color"> 05/11/2022 - 12:00am </span>
-                  </div>
-                </li>
-                <li class="flex gap-4 items-center">
-                  <div class="w-6 h-6 bg-red-color rounded-full"></div>
-                  <div
-                    class="flex flex-col gap-1 pl-2 border-l-2 border-red-color"
-                  >
-                    <span class="text-sm font-bold"
-                      >Finish The Development Workshop</span
-                    >
-                    <span class="text-grey-color"> 20/12/2022 - 12:00am </span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Latest Post -->
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-5">Latest Post</h2>
-              <div class="flex items-center gap-5">
-                <div class="w-12 h-12">
-                  <img
-                    class="w-full rounded-full"
-                    src="/img/avatar.png"
-                    alt=""
-                  />
-                </div>
-                <div class="flex flex-col">
-                  <span class="font-bold">Ukas Will</span>
-                  <span class="text-grey-color"> About 3 Hours Ago </span>
-                </div>
-              </div>
-              <p class="py-5 my-5 border-b border-t">
-                You can fool all of the people some of the time, and some of the
-                people all of the time, but you can't fool all of the people all
-                of the time.
-              </p>
-              <div class="flex justify-between text-grey-color">
-                <div>
-                  <i class="fa-regular fa-heart"></i>
-                  <span>1.8K</span>
-                </div>
-                <div>
-                  <i class="fa-regular fa-comments"></i> <span>500</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Social Media Stats -->
-
-            <div class="bg-white p-5 rounded-lg">
-              <h2 class="font-bold text-2xl mb-5">Social Media Stats</h2>
-
-              <ul class="flex flex-col gap-3">
-                <!-- twitter -->
-                <li>
-                  <div class="flex">
-                    <!-- icon box -->
-                    <div
-                      class="flex items-center justify-center w-14 bg-[#1da1f2]"
-                    >
-                      <i class="fa-brands fa-twitter fa-2x text-white"></i>
-                    </div>
-                    <div
-                      class="flex items-center justify-between bg-[#1da1f2] bg-opacity-30 flex-1 py-4 px-4"
-                    >
-                      <span class="text-[#1da1f2]">90K Followers</span>
-                      <span
-                        class="bg-[#1da1f2] text-white px-2.5 py-1 rounded-md cursor-pointer"
-                        >Follow</span
-                      >
-                    </div>
-                  </div>
-                </li>
-                <!-- Facbook -->
-                <li>
-                  <div class="flex">
-                    <!-- icon box -->
-                    <div
-                      class="flex items-center justify-center w-14 bg-[#1877f2]"
-                    >
-                      <i class="fa-brands fa-facebook-f fa-2x text-white"></i>
-                    </div>
-                    <div
-                      class="flex items-center justify-between bg-[#1877f2] bg-opacity-30 flex-1 py-4 px-4"
-                    >
-                      <span class="text-[#1877f2]">Like</span>
-                      <span
-                        class="bg-[#1877f2] text-white px-2.5 py-1 rounded-md cursor-pointer"
-                        >Follow</span
-                      >
-                    </div>
-                  </div>
-                </li>
-                <!-- Youtube -->
-                <li>
-                  <div class="flex">
-                    <!-- icon box -->
-                    <div
-                      class="flex items-center justify-center w-14 bg-[#ff0000]"
-                    >
-                      <i class="fa-brands fa-youtube fa-2x text-white"></i>
-                    </div>
-                    <div
-                      class="flex items-center justify-between bg-[#ff0000] bg-opacity-30 flex-1 py-4 px-4"
-                    >
-                      <span class="text-[#ff0000]">1M Subs</span>
-                      <span
-                        class="bg-[#ff0000] text-white px-2.5 py-1 rounded-md cursor-pointer"
-                        >Subscribe</span
-                      >
-                    </div>
-                  </div>
-                </li>
-                <!-- Linkedin -->
-                <li>
-                  <div class="flex">
-                    <!-- icon box -->
-                    <div
-                      class="flex items-center justify-center w-14 bg-[#0077b5]"
-                    >
-                      <i class="fa-brands fa-linkedin fa-2x text-white"></i>
-                    </div>
-                    <div
-                      class="flex items-center justify-between bg-[#0077b5] bg-opacity-30 flex-1 py-4 px-4"
-                    >
-                      <span class="text-[#0077b5]">70K Followers</span>
-                      <span
-                        class="bg-[#0077b5] text-white px-2.5 py-1 rounded-md cursor-pointer"
-                        >Follow</span
-                      >
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <!-- // -->
-            </div>
-
-            <!-- Project -->
-            <div
-              class="bg-white p-5 rounded-lg xl:col-span-2 overflow-x-scroll"
-            >
-              <h2 class="font-bold text-2xl mb-5">Project</h2>
-              <table class="table-auto border w-full border-[#eee]">
-                <thead>
-                  <tr class="text-left bg-[#eee]">
-                    <th class="p-4">Name</th>
-                    <th class="p-4">Finish Date</th>
-                    <th class="p-4">Client</th>
-                    <th class="p-4">Price</th>
-                    <th class="p-4">Team</th>
-                    <th class="p-4">Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
-                  >
-                    <td class="border border-t-0 border-gray-300 p-4 text-base">
-                      E-Commerce Website
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      20 Jan 2024
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      Retail Group
-                    </td>
-                    <td
-                      class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
-                    >
-                      $7500
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <div class="flex mb-4">
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-01.png"
-                            alt="Team 1"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <span
-                        class="inline-block px-2.5 py-1 rounded-md bg-green-color text-white text-sm"
-                        >Completed</span
-                      >
-                    </td>
-                  </tr>
-                  <tr
-                    class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
-                  >
-                    <td class="border border-t-0 border-gray-300 p-4 text-base">
-                      Mobile App
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      5 Dec 2023
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      Tech Solutions
-                    </td>
-                    <td
-                      class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
-                    >
-                      $6800
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <div class="flex mb-4">
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-02.png"
-                            alt="Team 2"
-                          />
-                        </div>
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer z-999"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-03.png"
-                            alt="Team 3"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <span
-                        class="inline-block px-2.5 py-1 rounded-md bg-primary text-white text-sm"
-                        >In Progress</span
-                      >
-                    </td>
-                  </tr>
-                  <tr
-                    class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
-                  >
-                    <td class="border border-t-0 border-gray-300 p-4 text-base">
-                      CRM System
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      30 Nov 2023
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      Enterprise Ltd
-                    </td>
-                    <td
-                      class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
-                    >
-                      $9100
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <div class="flex mb-4">
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-01.png"
-                            alt="Team 1"
-                          />
-                        </div>
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-04.png"
-                            alt="Team 4"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <span
-                        class="inline-block px-2.5 py-1 rounded-md bg-orange-color text-white text-sm"
-                        >Pending</span
-                      >
-                    </td>
-                  </tr>
-                  <tr
-                    class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
-                  >
-                    <td class="border border-t-0 border-gray-300 p-4 text-base">
-                      HR Management Tool
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      15 Feb 2024
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      HR Solutions
-                    </td>
-                    <td
-                      class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
-                    >
-                      $5600
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <div class="flex mb-4">
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-05.png"
-                            alt="Team 5"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <span
-                        class="inline-block px-2.5 py-1 rounded-md bg-red-color text-white text-sm"
-                        >Rejected</span
-                      >
-                    </td>
-                  </tr>
-                  <tr
-                    class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
-                  >
-                    <td class="border border-t-0 border-gray-300 p-4 text-base">
-                      Healthcare Portal
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      20 September 2023
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      Health Dept
-                    </td>
-                    <td
-                      class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
-                    >
-                      $7200
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <div class="flex mb-4">
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-01.png"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-02.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <span
-                        class="inline-block px-2.5 py-1 rounded-md bg-green-color text-white text-sm"
-                      >
-                        Completed
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
-                  >
-                    <td class="border border-t-0 border-gray-300 p-4 text-base">
-                      Retail Management
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      5 March 2023
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      Retail Group
-                    </td>
-                    <td
-                      class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
-                    >
-                      $8500
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <div class="flex mb-4">
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-01.png"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-02.png"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-03.png"
-                            alt=""
-                          />
-                        </div>
-
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-04.png"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-05.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <span
-                        class="inline-block px-2.5 py-1 rounded-md bg-orange-color text-white text-sm"
-                      >
-                        Pending
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
-                  >
-                    <td class="border border-t-0 border-gray-300 p-4 text-base">
-                      E-Learning Platform
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      12 December 2023
-                    </td>
-                    <td class="border border-t-0 border-gray-300 p-4">
-                      Education Co.
-                    </td>
-                    <td
-                      class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
-                    >
-                      $9600
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <div class="flex mb-4">
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-01.png"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-03.png"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
-                        >
-                          <img
-                            class="w-full rounded-full"
-                            src="/img/team-05.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="border border-gray-300 p-4">
-                      <span
-                        class="inline-block px-2.5 py-1 rounded-md bg-primary text-white text-sm"
-                      >
-                        In Progress
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-        </section>
-      </main>
+    <div class="relative p-5 bg-[#eee] mb-16 rounded-t-lg">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="font-bold text-2xl mb-2">Welcome</h2>
+          <p class="text-grey-color">Ukas</p>
+        </div>
+        <div class="hidden w-52 md:block">
+          <img class="w-full" src="/img/welcome.png" alt="welcome" />
+        </div>
+      </div>
+      <div
+        class="absolute top-full left-1/2 -translate-x-1/2 md:translate-x-0 md:left-5 -translate-y-1/2 w-20 h-20 p-1 border rounded-full bg-white cursor-pointer"
+      >
+        <img class="w-full rounded-full" src="/img/team-04.png" at="" />
+      </div>
     </div>
-    <script src="./scripts/script.js"></script>
-  </body>
-</html>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-y-3 border-t border-b my-4 p-5"
+    >
+      <div class="bg-blufe-500 grid place-items-center">
+        <div>
+          <p class="font-normal mb-2 text-center">John Will</p>
+          <p class="text-grey-color">Developer</p>
+        </div>
+      </div>
+      <div class="bg-grefen-500 grid place-items-center">
+        <div>
+          <p class="font-normal mb-2 text-center">80</p>
+          <p class="text-grey-color">Projects</p>
+        </div>
+      </div>
+      <div class="bg-yellfow-500 grid place-items-center">
+        <div>
+          <p class="font-normal mb-2 text-center">$8500</p>
+          <p class="text-grey-color">Earned</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-right pb-10 mr-2.5">
+      <a href="" class="px-2.5 py-1 bg-primary rounded-md text-white"
+        >Profile</a
+      >
+    </div>
+  </div>
+
+  <!-- Quick Draft -->
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-3">Quick Draft</h2>
+    <p class="text-grey-color mb-5">Write A Draft For Your Ideas</p>
+
+    <!-- title -->
+    <input
+      placeholder="title"
+      class="w-full p-2.5 outline-none border-[#ddd] bg-[#f6f6f6] rounded-md order-last"
+      type="text"
+    />
+
+    <!-- Your thought -->
+    <textarea
+      type="text"
+      class="block w-full h-52 p-2.5 bg-[#f6f6f6] placeholder:text-grey-color rounded-md mt-3 mb-5 resize-none outline-none"
+      placeholder="Your thought"
+    ></textarea>
+
+    <div class="text-right pb-10">
+      <a href="" class="px-2.5 py-1 bg-primary rounded-md text-white"
+        >Profile</a
+      >
+    </div>
+  </div>
+
+  <!-- Yearly Targets -->
+  <div class="flex flex-col gap-5 bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-3">Yearly Targets</h2>
+    <p class="text-grey-color mb-5">Targets Of The Year</p>
+    <div class="flex items-center gap-3">
+      <div class="w-20 h-20 flex items-center justify-center bg-primary/20">
+        <i class="fa-solid fa-dollar-sign fa-lg text-primary"></i>
+      </div>
+      <div class="flex-1">
+        <span class="block text-grey-color mb-1">Money</span>
+        <span class="block text-xl font-medium mb-2">$20.000</span>
+        <div class="relative z-0 w-full h-1 bg-primary/20">
+          <div class="absolute bg-primary h-full w-4/5"></div>
+          <div
+            class="absolute left-[80%] transform -translate-x-1/2 -translate-y-[130%] px-[5px] py-0.5 text-white bg-primary rounded-lg"
+          >
+            80%
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div
+        class="w-20 h-20 flex items-center justify-center bg-orange-color/20"
+      >
+        <i class="fa-solid fa-code fa-lg text-orange-color"></i>
+      </div>
+      <div class="flex-1">
+        <span class="block text-grey-color mb-1"> Projects </span>
+        <span class="block text-xl font-medium mb-2">24</span>
+        <div class="relative z-0 w-full h-1 bg-orange-color/20">
+          <div class="absolute bg-orange-color h-full w-[55%]"></div>
+          <div
+            class="absolute left-[55%] transform -translate-x-1/2 -translate-y-[130%] px-[5px] py-0.5 text-white bg-orange-color rounded-lg"
+          >
+            55%
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="w-20 h-20 flex items-center justify-center bg-green-color/20">
+        <i class="fa-solid fa-user fa-lg text-green-color"></i>
+      </div>
+      <div class="flex-1">
+        <span class="block text-grey-color mb-1">Money</span>
+        <span class="block text-xl font-medium mb-2">$20.000</span>
+        <div class="relative z-0 w-full h-1 bg-green-color/20">
+          <div class="absolute bg-green-color h-full w-4/5"></div>
+          <div
+            class="absolute left-[75%] transform -translate-x-1/2 -translate-y-[130%] px-[5px] py-0.5 text-white bg-green-color rounded-lg"
+          >
+            75%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tickets Statistics -->
+
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-3">Tickets Statistics</h2>
+    <p class="text-grey-color mb-5">Everything About Support Tickets</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div
+        class="flex flex-col items-center justify-center gap-2 p-5 border-[2px] rounded-md"
+      >
+        <i class="fa-regular fa-rectangle-list text-orange-color fa-2x"></i>
+        <span class="text-3xl font-medium">2500</span>
+        <span class="text-grey-color">Total</span>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center gap-2 p-5 border-[2px] rounded-md"
+      >
+        <i class="fa-regular fa-spinner text-primary fa-2x"></i>
+        <span class="text-3xl font-medium">1000</span>
+        <span class="text-grey-color">Pending</span>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center gap-2 p-5 border-[2px] rounded-md"
+      >
+        <i class="fa-regular fa-circle-check text-green-color fa-2x"></i>
+        <span class="text-3xl font-medium">2500</span>
+        <span class="text-grey-color">Closed</span>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center gap-2 p-5 border-[2px] rounded-md"
+      >
+        <i class="fa-regular fa-rectangle-xmark text-red-color fa-2x"></i>
+        <span class="text-3xl font-medium">1000</span>
+        <span class="text-grey-color">Deleted</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest News -->
+
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-3">Latest News</h2>
+    <p class="hidden text-grey-color mb-5 md:block">
+      Everything About Support Tickets
+    </p>
+    <div>
+      <div class="flex flex-col items-center md:flex-row pb-5 border-b">
+        <div class="flex flex-col md:flex-row items-center gap-3 flex-1">
+          <div class="w-[100px] rounded-md">
+            <img
+              class="w-full rounded-md"
+              src="/img/news-01.png"
+              alt="news-01"
+            />
+          </div>
+
+          <div class="text-center md:text-left">
+            <span class="block text-lg font-medium">Created SASS Section</span>
+            <span class="inline-block text-grey-color text-base mb-2"
+              >New SASS Examples & Tutorials</span
+            >
+          </div>
+        </div>
+        <div class="px-2.5 py-1 bg-[#f6f6f6] text-base rounded-md">
+          3 Days Ago
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center md:flex-row pb-5 mt-5 border-b">
+        <div class="flex flex-col md:flex-row items-center gap-3 flex-1">
+          <div class="w-[100px] rounded-md">
+            <img
+              class="w-full rounded-md"
+              src="/img/news-02.png"
+              alt="news-02"
+            />
+          </div>
+
+          <div class="text-center md:text-left">
+            <span class="block text-lg font-medium">Changed The Design</span>
+            <span class="inline-block text-grey-color text-base mb-2"
+              >A Brand New Website Design</span
+            >
+          </div>
+        </div>
+        <div class="px-2.5 py-1 bg-[#f6f6f6] text-base rounded-md">
+          5 Days Ago
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center md:flex-row pb-5 mt-5 border-b">
+        <div class="flex flex-col md:flex-row items-center gap-3 flex-1">
+          <div class="w-[100px] rounded-md">
+            <img
+              class="w-full rounded-md"
+              src="/img/news-03.png"
+              alt="news-01"
+            />
+          </div>
+
+          <div class="text-center md:text-left">
+            <span class="block text-lg font-medium">Team Increased</span>
+            <span class="inline-block text-grey-color text-base mb-2"
+              >3 Developers Joined The Team</span
+            >
+          </div>
+        </div>
+        <div class="px-2.5 py-1 bg-[#f6f6f6] text-base rounded-md">
+          3 Days Ago
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center md:flex-row pb-5 mt-5 border-b">
+        <div class="flex flex-col md:flex-row items-center gap-3 flex-1">
+          <div class="w-[100px] rounded-md">
+            <img
+              class="w-full rounded-md"
+              src="/img/news-04.png"
+              alt="news-01"
+            />
+          </div>
+
+          <div class="text-center md:text-left">
+            <span class="block text-lg font-medium">Added Payment Gateway</span>
+            <span class="inline-block text-grey-color text-base mb-2"
+              >Many New Payment Gateways Added</span
+            >
+          </div>
+        </div>
+        <div class="px-2.5 py-1 bg-[#f6f6f6] text-base rounded-md">
+          9 Days Ago
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest Tasks -->
+
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-3">Latest Tasks</h2>
+    <div class="flex justify-between items-center border-b pb-5 mb-5">
+      <div class="">
+        <h3 class="font-medium text-lg">Record One New Video</h3>
+        <p class="text-grey-color">Record Python Create Exe Project</p>
+      </div>
+      <i
+        class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
+      ></i>
+    </div>
+    <div class="flex justify-between items-center border-b pb-5 mb-5">
+      <div class="">
+        <h3 class="font-medium text-lg">Write Article</h3>
+        <p class="text-grey-color">Write Low Level vs High Level Languages</p>
+      </div>
+      <i
+        class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
+      ></i>
+    </div>
+    <div class="flex justify-between items-center border-b pb-5 mb-5">
+      <div class="">
+        <h3 class="font-medium text-lg">Finish Project</h3>
+        <p class="text-grey-color">Publish Academy Programming Project</p>
+      </div>
+      <i
+        class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
+      ></i>
+    </div>
+    <div class="flex justify-between items-center border-b pb-5 mb-5">
+      <div class="">
+        <h3 class="font-medium text-lg opacity-40">Attend The Meeting</h3>
+        <p class="text-grey-color opacity-40 underline underline-offset-4">
+          Attend The Project Business Analysis Meeting
+        </p>
+      </div>
+      <i
+        class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
+      ></i>
+    </div>
+    <div class="flex justify-between items-center border-b pb-5 mb-5">
+      <div class="">
+        <h3 class="font-medium text-lg">Finish Lesson</h3>
+        <p class="text-grey-color">Finish Teaching Flex Box</p>
+      </div>
+      <i
+        class="fa-regular fa-trash-can cursor-pointer hover:text-red-color transition delay-300 ease-in-out"
+      ></i>
+    </div>
+  </div>
+
+  <!-- Top Search Items -->
+
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-3">Top Search Items</h2>
+
+    <ul class="flex flex-col gap-5">
+      <li class="flex justify-between text-grey-color text-xl mb-3">
+        <span>Keyword</span>
+        <span>Search Count</span>
+      </li>
+      <li class="flex justify-between">
+        <span>Programming</span>
+        <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">220</span>
+      </li>
+      <li class="flex justify-between">
+        <span>JavaScript</span>
+        <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">180</span>
+      </li>
+      <li class="flex justify-between">
+        <span>PHP</span>
+        <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">160</span>
+      </li>
+      <li class="flex justify-between">
+        <span>Code</span>
+        <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">145</span>
+      </li>
+      <li class="flex justify-between">
+        <span>Design</span>
+        <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">110</span>
+      </li>
+      <li class="flex justify-between">
+        <span>Logic</span>
+        <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">95</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Latest Uploads -->
+
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-3">Latest Uploads</h2>
+    <ul class="flex items-center justify-between border-b pb-2.5 mb-2.5">
+      <li class="flex items-center gap-3">
+        <div class="w-10 h-10">
+          <img class="w-full" src="/img/pdf.svg" alt="" />
+        </div>
+        <div class="flex flex-col">
+          <span>Project-Overview.pdf</span>
+          <span class="text-grey-color">Alice</span>
+        </div>
+      </li>
+      <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">1.7mb</span>
+    </ul>
+    <ul class="flex items-center justify-between border-b pb-2.5 mb-2.5">
+      <li class="flex items-center gap-3">
+        <div class="w-10 h-10">
+          <img class="w-full" src="/img/avi.svg" alt="" />
+        </div>
+        <div class="flex flex-col">
+          <span>Sample-Video.avi</span>
+          <span class="text-grey-color">Bob</span>
+        </div>
+      </li>
+      <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">8.3mb</span>
+    </ul>
+    <ul class="flex items-center justify-between border-b pb-2.5 mb-2.5">
+      <li class="flex items-center gap-3">
+        <div class="w-10 h-10">
+          <img class="w-full" src="/img/psd.svg" alt="" />
+        </div>
+        <div class="flex flex-col">
+          <span>Creative-Design.psd</span>
+          <span class="text-grey-color">Chris</span>
+        </div>
+      </li>
+      <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">12.4mb</span>
+    </ul>
+    <ul class="flex items-center justify-between border-b pb-2.5 mb-2.5">
+      <li class="flex items-center gap-3">
+        <div class="w-10 h-10">
+          <img class="w-full" src="/img/zip.svg" alt="" />
+        </div>
+        <div class="flex flex-col">
+          <span>Compressed-Files.zip</span>
+          <span class="text-grey-color">Dana</span>
+        </div>
+      </li>
+      <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">15.2mb</span>
+    </ul>
+    <ul class="flex items-center justify-between border-b pb-2.5 mb-2.5">
+      <li class="flex items-center gap-3">
+        <div class="w-10 h-10">
+          <img class="w-full" src="/img/dll.svg" alt="" />
+        </div>
+        <div class="flex flex-col">
+          <span>Library-Files.dll</span>
+          <span class="text-grey-color">Evan</span>
+        </div>
+      </li>
+      <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">2.1mb</span>
+    </ul>
+    <ul class="flex items-center justify-between border-b pb-2.5 mb-2.5">
+      <li class="flex items-center gap-3">
+        <div class="w-10 h-10">
+          <img class="w-full" src="/img/eps.svg" alt="" />
+        </div>
+        <div class="flex flex-col">
+          <span>Vector-Art.eps</span>
+          <span class="text-grey-color">Fiona</span>
+        </div>
+      </li>
+      <span class="px-2.5 py-1 bg-[#f6f6f6] rounded-md">9.6mb</span>
+    </ul>
+  </div>
+
+  <div class="relative bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-5">Latest Uploads</h2>
+
+    <ul class="flex flex-col gap-4">
+      <li class="flex items-center gap-3">
+        <div
+          class="relative flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
+        >
+          <span class="w-4 h-4 rounded-full bg-primary"></span>
+
+          <div
+            class="absolute w-4 h-5 -bottom-[22px] left-[9px] bg-white border-[2px] border-primary border-t-0 border-r-0 border-b-0"
+          ></div>
+        </div>
+        <span class="text-lg">Got The Project</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <div
+          class="relative flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
+        >
+          <span class="w-4 h-4 rounded-full bg-primary"></span>
+          <div
+            class="absolute w-4 h-5 -bottom-[22px] left-[9px] bg-white border-[2px] border-primary border-t-0 border-r-0 border-b-0"
+          ></div>
+        </div>
+        <span class="text-lg">Started The Project</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <div
+          class="relative flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
+        >
+          <span class="w-4 h-4 rounded-full bg-primary"></span>
+          <div
+            class="absolute w-4 h-5 -bottom-[22px] left-[9px] bg-white border-[2px] border-primary border-t-0 border-r-0 border-b-0"
+          ></div>
+        </div>
+        <span class="text-lg">The Project About To Finish</span>
+      </li>
+      <li class="flex items-center gap-3 group">
+        <div
+          class="relative flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
+        >
+          <span
+            class="w-4 h-4 rounded-full bg-primaryt animate-bg-toggle"
+          ></span>
+          <div
+            class="absolute w-4 h-5 -bottom-[22px] left-[9px] bg-white border-[2px] border-primary border-t-0 border-r-0 border-b-0"
+          ></div>
+        </div>
+        <span class="text-lg">Test The Project</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <div
+          class="flex items-center justify-center w-6 h-6 rounded-full border-primary border-2"
+        >
+          <span class="w-4 h-4 rounded-full bg-primaryt"></span>
+        </div>
+        <span class="text-lg">Finish The Project & Get Money</span>
+      </li>
+    </ul>
+    <div
+      class="hidden md:block absolute right-0 bottom-0 w-40 h-40 align-baseline opacity-10"
+    >
+      <img class="w-full" src="/img/project.png" alt="" />
+    </div>
+  </div>
+
+  <!-- Reminders -->
+
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-3">Reminders</h2>
+    <ul class="flex flex-col gap-4">
+      <li class="flex gap-4 items-center">
+        <div class="w-6 h-6 bg-primary rounded-full"></div>
+        <div class="flex flex-col gap-1 pl-2 border-l-2 border-primary">
+          <span class="text-sm font-bold">Check My Tasks List</span>
+          <span class="text-grey-color"> 28/09/2022 - 12:00am </span>
+        </div>
+      </li>
+      <li class="flex gap-4 items-center">
+        <div class="w-6 h-6 bg-green-color rounded-full"></div>
+        <div class="flex flex-col gap-1 pl-2 border-l-2 border-green-color">
+          <span class="text-sm font-bold">Check My Projects</span>
+          <span class="text-grey-color"> 28/09/2022 - 12:00am </span>
+        </div>
+      </li>
+      <li class="flex gap-4 items-center">
+        <div class="w-6 h-6 bg-orange-color rounded-full"></div>
+        <div class="flex flex-col gap-1 pl-2 border-l-2 border-orange-color">
+          <span class="text-sm font-bold">Call All My Clients</span>
+          <span class="text-grey-color"> 05/11/2022 - 12:00am </span>
+        </div>
+      </li>
+      <li class="flex gap-4 items-center">
+        <div class="w-6 h-6 bg-red-color rounded-full"></div>
+        <div class="flex flex-col gap-1 pl-2 border-l-2 border-red-color">
+          <span class="text-sm font-bold">Finish The Development Workshop</span>
+          <span class="text-grey-color"> 20/12/2022 - 12:00am </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Latest Post -->
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-5">Latest Post</h2>
+    <div class="flex items-center gap-5">
+      <div class="w-12 h-12">
+        <img class="w-full rounded-full" src="/img/avatar.png" alt="" />
+      </div>
+      <div class="flex flex-col">
+        <span class="font-bold">Ukas Will</span>
+        <span class="text-grey-color"> About 3 Hours Ago </span>
+      </div>
+    </div>
+    <p class="py-5 my-5 border-b border-t">
+      You can fool all of the people some of the time, and some of the people
+      all of the time, but you can't fool all of the people all of the time.
+    </p>
+    <div class="flex justify-between text-grey-color">
+      <div>
+        <i class="fa-regular fa-heart"></i>
+        <span>1.8K</span>
+      </div>
+      <div><i class="fa-regular fa-comments"></i> <span>500</span></div>
+    </div>
+  </div>
+
+  <!-- Social Media Stats -->
+
+  <div class="bg-white p-5 rounded-lg">
+    <h2 class="font-bold text-2xl mb-5">Social Media Stats</h2>
+
+    <ul class="flex flex-col gap-3">
+      <!-- twitter -->
+      <li>
+        <div class="flex">
+          <!-- icon box -->
+          <div class="flex items-center justify-center w-14 bg-[#1da1f2]">
+            <i class="fa-brands fa-twitter fa-2x text-white"></i>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#1da1f2] bg-opacity-30 flex-1 py-4 px-4"
+          >
+            <span class="text-[#1da1f2]">90K Followers</span>
+            <span
+              class="bg-[#1da1f2] text-white px-2.5 py-1 rounded-md cursor-pointer"
+              >Follow</span
+            >
+          </div>
+        </div>
+      </li>
+      <!-- Facbook -->
+      <li>
+        <div class="flex">
+          <!-- icon box -->
+          <div class="flex items-center justify-center w-14 bg-[#1877f2]">
+            <i class="fa-brands fa-facebook-f fa-2x text-white"></i>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#1877f2] bg-opacity-30 flex-1 py-4 px-4"
+          >
+            <span class="text-[#1877f2]">Like</span>
+            <span
+              class="bg-[#1877f2] text-white px-2.5 py-1 rounded-md cursor-pointer"
+              >Follow</span
+            >
+          </div>
+        </div>
+      </li>
+      <!-- Youtube -->
+      <li>
+        <div class="flex">
+          <!-- icon box -->
+          <div class="flex items-center justify-center w-14 bg-[#ff0000]">
+            <i class="fa-brands fa-youtube fa-2x text-white"></i>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#ff0000] bg-opacity-30 flex-1 py-4 px-4"
+          >
+            <span class="text-[#ff0000]">1M Subs</span>
+            <span
+              class="bg-[#ff0000] text-white px-2.5 py-1 rounded-md cursor-pointer"
+              >Subscribe</span
+            >
+          </div>
+        </div>
+      </li>
+      <!-- Linkedin -->
+      <li>
+        <div class="flex">
+          <!-- icon box -->
+          <div class="flex items-center justify-center w-14 bg-[#0077b5]">
+            <i class="fa-brands fa-linkedin fa-2x text-white"></i>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#0077b5] bg-opacity-30 flex-1 py-4 px-4"
+          >
+            <span class="text-[#0077b5]">70K Followers</span>
+            <span
+              class="bg-[#0077b5] text-white px-2.5 py-1 rounded-md cursor-pointer"
+              >Follow</span
+            >
+          </div>
+        </div>
+      </li>
+    </ul>
+    <!-- // -->
+  </div>
+
+  <!-- Project -->
+  <div class="bg-white p-5 rounded-lg xl:col-span-2 overflow-x-scroll">
+    <h2 class="font-bold text-2xl mb-5">Project</h2>
+    <table class="table-auto border w-full border-[#eee]">
+      <thead>
+        <tr class="text-left bg-[#eee]">
+          <th class="p-4">Name</th>
+          <th class="p-4">Finish Date</th>
+          <th class="p-4">Client</th>
+          <th class="p-4">Price</th>
+          <th class="p-4">Team</th>
+          <th class="p-4">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
+        >
+          <td class="border border-t-0 border-gray-300 p-4 text-base">
+            E-Commerce Website
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">20 Jan 2024</td>
+          <td class="border border-t-0 border-gray-300 p-4">Retail Group</td>
+          <td
+            class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
+          >
+            $7500
+          </td>
+          <td class="border border-gray-300 p-4">
+            <div class="flex mb-4">
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-01.png"
+                  alt="Team 1"
+                />
+              </div>
+            </div>
+          </td>
+          <td class="border border-gray-300 p-4">
+            <span
+              class="inline-block px-2.5 py-1 rounded-md bg-green-color text-white text-sm"
+              >Completed</span
+            >
+          </td>
+        </tr>
+        <tr
+          class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
+        >
+          <td class="border border-t-0 border-gray-300 p-4 text-base">
+            Mobile App
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">5 Dec 2023</td>
+          <td class="border border-t-0 border-gray-300 p-4">Tech Solutions</td>
+          <td
+            class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
+          >
+            $6800
+          </td>
+          <td class="border border-gray-300 p-4">
+            <div class="flex mb-4">
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-02.png"
+                  alt="Team 2"
+                />
+              </div>
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer z-999"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-03.png"
+                  alt="Team 3"
+                />
+              </div>
+            </div>
+          </td>
+          <td class="border border-gray-300 p-4">
+            <span
+              class="inline-block px-2.5 py-1 rounded-md bg-primary text-white text-sm"
+              >In Progress</span
+            >
+          </td>
+        </tr>
+        <tr
+          class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
+        >
+          <td class="border border-t-0 border-gray-300 p-4 text-base">
+            CRM System
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">30 Nov 2023</td>
+          <td class="border border-t-0 border-gray-300 p-4">Enterprise Ltd</td>
+          <td
+            class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
+          >
+            $9100
+          </td>
+          <td class="border border-gray-300 p-4">
+            <div class="flex mb-4">
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-01.png"
+                  alt="Team 1"
+                />
+              </div>
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-04.png"
+                  alt="Team 4"
+                />
+              </div>
+            </div>
+          </td>
+          <td class="border border-gray-300 p-4">
+            <span
+              class="inline-block px-2.5 py-1 rounded-md bg-orange-color text-white text-sm"
+              >Pending</span
+            >
+          </td>
+        </tr>
+        <tr
+          class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
+        >
+          <td class="border border-t-0 border-gray-300 p-4 text-base">
+            HR Management Tool
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">15 Feb 2024</td>
+          <td class="border border-t-0 border-gray-300 p-4">HR Solutions</td>
+          <td
+            class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
+          >
+            $5600
+          </td>
+          <td class="border border-gray-300 p-4">
+            <div class="flex mb-4">
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-05.png"
+                  alt="Team 5"
+                />
+              </div>
+            </div>
+          </td>
+          <td class="border border-gray-300 p-4">
+            <span
+              class="inline-block px-2.5 py-1 rounded-md bg-red-color text-white text-sm"
+              >Rejected</span
+            >
+          </td>
+        </tr>
+        <tr
+          class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
+        >
+          <td class="border border-t-0 border-gray-300 p-4 text-base">
+            Healthcare Portal
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">
+            20 September 2023
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">Health Dept</td>
+          <td
+            class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
+          >
+            $7200
+          </td>
+          <td class="border border-gray-300 p-4">
+            <div class="flex mb-4">
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-01.png"
+                  alt=""
+                />
+              </div>
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-02.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </td>
+          <td class="border border-gray-300 p-4">
+            <span
+              class="inline-block px-2.5 py-1 rounded-md bg-green-color text-white text-sm"
+            >
+              Completed
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
+        >
+          <td class="border border-t-0 border-gray-300 p-4 text-base">
+            Retail Management
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">5 March 2023</td>
+          <td class="border border-t-0 border-gray-300 p-4">Retail Group</td>
+          <td
+            class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
+          >
+            $8500
+          </td>
+          <td class="border border-gray-300 p-4">
+            <div class="flex mb-4">
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-01.png"
+                  alt=""
+                />
+              </div>
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-02.png"
+                  alt=""
+                />
+              </div>
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-03.png"
+                  alt=""
+                />
+              </div>
+
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-04.png"
+                  alt=""
+                />
+              </div>
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-05.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </td>
+          <td class="border border-gray-300 p-4">
+            <span
+              class="inline-block px-2.5 py-1 rounded-md bg-orange-color text-white text-sm"
+            >
+              Pending
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="transition-all delay-100 ease-in-out hover:bg-[#f6f6f6] hover:bg-opacity-50"
+        >
+          <td class="border border-t-0 border-gray-300 p-4 text-base">
+            E-Learning Platform
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">
+            12 December 2023
+          </td>
+          <td class="border border-t-0 border-gray-300 p-4">Education Co.</td>
+          <td
+            class="border border-t-0 border-gray-300 p-4 text-sm font-semibold"
+          >
+            $9600
+          </td>
+          <td class="border border-gray-300 p-4">
+            <div class="flex mb-4">
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-01.png"
+                  alt=""
+                />
+              </div>
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-03.png"
+                  alt=""
+                />
+              </div>
+              <div
+                class="hover:relative w-8 h-8 p-0.5 rounded-full bg-white -ml-4 cursor-pointer"
+              >
+                <img
+                  class="w-full rounded-full"
+                  src="/img/team-05.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </td>
+          <td class="border border-gray-300 p-4">
+            <span
+              class="inline-block px-2.5 py-1 rounded-md bg-primary text-white text-sm"
+            >
+              In Progress
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

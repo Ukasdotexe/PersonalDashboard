@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Hub</title>
+    <!-- Main Css File -->
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- Font Awesome Icons-->
+
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+  </head>
+  <body class="relative font-roboto bg-white/10">
+    <div class="flex h-screen">
+      <nav
+        id="sidenav"
+        class="hidden bg-red-6f00 px-2.5 py-2.5 md:px-5 md:py-5 md:block"
+      >
+        <p class="text-center font-medium mb-4">Ukas</p>
+        <hr class="hidden mb-6 h-1 bg-black md:block" />
+        <ul class="flex flex-col gap-y-1 w-[33px] md:w-[180px]">
+          <li>
+            <a
+              id=""
+              class="dashboard flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-chart-bar fa-fw"></i>
+              <span class="text-base font-normal">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id=""
+              class="settings flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-solid fa-gear fa-fw"></i>
+              <span class="text-base font-normal">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id=""
+              class="profile flex gap-x-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-user fa-fw"></i>
+              <span class="text-base font-normal">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id=""
+              class="projects flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-solid fa-diagram-project fa-fw"></i>
+              <span class="text-base font-normal">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id=""
+              class="courses flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-solid fa-graduation-cap fa-fw"></i>
+              <span class="text-base font-normal">Courses</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id=""
+              class="friends flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-circle-user fa-fw"></i>
+              <span class="text-base font-normal">Friends</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id=""
+              class="files flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-file fa-fw"></i>
+              <span class="text-base font-normal">Files</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id=""
+              class="plans flex gap-2.5 items-center p-2.5 rounded-[2px] cursor-pointer transition ease-in-out delay-100 hover:bg-[#f6f6f6]"
+            >
+              <i class="fa-regular fa-credit-card fa-fw"></i>
+              <span class="text-base font-normal">Plans</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <main class="bg-[#f3f3f3] flex-1 pl-2">
+        <section
+          class="flex items-center justify-between bg-red-5000 p-4 bg-white"
+        >
+          <div class="relative">
+            <input
+              type="search"
+              placeholder="Search..."
+              class="pl-7 py-2.5 pr-2.5 rounded-md border w-44 border-grey-color focus:w-56 transition-width duration-300 ease-in-out focus:outline-none focus:placeholder-transparent"
+            />
+            <i
+              class="fa fa-search fa-chart-bar fa-fw absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-500"
+            ></i>
+          </div>
+          <div class="hidden relative md:flex items-center gap-x-4">
+            <i class="relative fa-regular fa-bell fa-lg cursor-pointer"> </i>
+            <img
+              class="w-8 cursor-pointer"
+              src="/img/avatar.png"
+              alt="profile-picture"
+            />
+            <span
+              class="inline-block w-2.5 h-2.5 rounded-full absolute top-0 left-3 bg-red-500"
+            ></span>
+          </div>
+          <div id="menu" class="md:hidden">
+            <i class="relative fas fa-bars fa-lg cursor-pointer"> </i>
+          </div>
+        </section>
+        <section class="bg-[#f1f5f9] pb-10" id="children-container"></section>
+      </main>
+    </div>
+
+    <!-- nav mobile screens-->
+    <nav
+      id="mobile"
+      class="absolute left-0 top-0 z-50 w-[300px] h-screen bg-white transform -translate-x-[100%] transition-all delay-200 ease-in-out"
+    >
+      <ul
+        class="grid grid-cols-4 border-r bg-red-400d text-right cursor-pointer"
+      >
+        <li
+          class="group h-10 flex items-center justify-center bg-[#f6f6f6] border border-[#ddd]"
+        >
+          <i
+            id="twitter-icon"
+            class="fa-brands fa-twitter text-grey-color group-hover:text-black transiton delay-100 ease-in-out"
+          ></i>
+        </li>
+
+        <li
+          class="group flex items-center justify-center bg-[#f6f6f6] border border-[#ddd]"
+        >
+          <i
+            id="facebook-icon"
+            class="fa-brands fa-facebook-f text-grey-color group-hover:text-black transiton delay-100 ease-in-out"
+          ></i>
+        </li>
+
+        <li
+          class="group flex items-center justify-center bg-[#f6f6f6] border border-[#ddd]"
+        >
+          <i
+            id="linkedin-icon"
+            class="fa-brands fa-linkedin text-grey-color group-hover:text-black transiton delay-100 ease-in-out"
+          ></i>
+        </li>
+
+        <li
+          class="group flex items-center justify-center bg-[#f6f6f6] border border-[#ddd]"
+        >
+          <i
+            id="youtube-icon"
+            class="fa-brands fa-youtube text-grey-color group-hover:text-black transiton delay-100 ease-in-out"
+          ></i>
+        </li>
+      </ul>
+
+      <div class="flex items-center justify-between border-b border-r">
+        <div class="flex items-center gap-5 p-5">
+          <!-- profile pic -->
+          <div class="w-12 h-12 rounded-full">
+            <img
+              class="w-full rounded-full"
+              src="/img/avatar.png"
+              alt="profile pic"
+            />
+          </div>
+          <!-- name and level -->
+          <div class="flex flex-col">
+            <span class="text-lg font-medium">Ukas</span>
+            <span class="text-grey-color">Level 20</span>
+          </div>
+        </div>
+        <div class="relative pr-4">
+          <i class="fa-regular fa-bell fa-lg cursor-pointer"> </i>
+
+          <!-- <span
+          class="inline-block w-2.5 h-2.5 rounded-full absolute top-0 left-3 bg-red-500"
+        ></span> -->
+        </div>
+        <!-- <i class="fas fa-times"></i> -->
+      </div>
+
+      <ul>
+        <li>
+          <a
+            class="dashboard py-5 px-6 flex gap-x-5 items-center border-b border-r cursor-pointer transition-alter hover:bg-[#f6f6f6] hover:bg-opacity-50"
+          >
+            <i class="fa-regular fa-chart-bar fa-fw"></i>
+            <span class="text-base font-normal">Dashboard</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            id=""
+            class="settings py-5 px-6 flex gap-x-5 items-center border-b border-r cursor-pointer transition-alter hover:bg-[#f6f6f6] hover:bg-opacity-50"
+          >
+            <i class="fa-solid fa-gear fa-fw"></i>
+            <span class="text-base font-normal">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a
+            id=""
+            class="profile py-5 px-6 flex gap-x-5 items-center border-b border-r cursor-pointer transition-alter hover:bg-[#f6f6f6] hover:bg-opacity-50"
+          >
+            <i class="fa-regular fa-user fa-fw"></i>
+            <span class="text-base font-normal">Profile</span>
+          </a>
+        </li>
+        <li>
+          <a
+            id=""
+            class="projects py-5 px-6 flex gap-x-5 items-center border-b border-r cursor-pointer transition-alter hover:bg-[#f6f6f6] hover:bg-opacity-50"
+          >
+            <i class="fa-solid fa-diagram-project fa-fw"></i>
+            <span class="text-base font-normal">Projects</span>
+          </a>
+        </li>
+        <li>
+          <a
+            id=""
+            class="courses py-5 px-6 flex gap-x-5 items-center border-b border-r cursor-pointer transition-alter hover:bg-[#f6f6f6] hover:bg-opacity-50"
+          >
+            <i class="fa-solid fa-graduation-cap fa-fw"></i>
+            <span class="text-base font-normal">Courses</span>
+          </a>
+        </li>
+        <li>
+          <a
+            id=""
+            class="friends py-5 px-6 flex gap-x-5 items-center border-b border-r cursor-pointer transition-alter hover:bg-[#f6f6f6] hover:bg-opacity-50"
+          >
+            <i class="fa-regular fa-circle-user fa-fw"></i>
+            <span class="text-base font-normal">Friends</span>
+          </a>
+        </li>
+        <li>
+          <a
+            id=""
+            class="files py-5 px-6 flex gap-x-5 items-center border-b border-r cursor-pointer transition-alter hover:bg-[#f6f6f6] hover:bg-opacity-50"
+          >
+            <i class="fa-regular fa-file fa-fw"></i>
+            <span class="text-base font-normal">Files</span>
+          </a>
+        </li>
+        <li>
+          <a
+            id=""
+            class="plants py-5 px-6 flex gap-x-5 items-center border-b border-r cursor-pointer transition-alter hover:bg-[#f6f6f6] hover:bg-opacity-50"
+          >
+            <i class="fa-regular fa-credit-card fa-fw"></i>
+            <span class="text-base font-normal">Plans</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- overlay -->
+    <div
+      id="overlay"
+      class="fixed left-0 top-0 w-full h-full hidden bg-[rgba(0,0,0,0.5)] z-[10]"
+    ></div>
+
+    <!-- <div class="fixed left-0 top-0 w-full h-full bg-red-900">adf</div> -->
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

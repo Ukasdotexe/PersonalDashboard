@@ -32,6 +32,15 @@ module.exports = {
         bounceInfinite: "bounceY 0.8s ease-in-out infinite",
         "bg-toggle": "bgToggle 2s infinite",
       },
+      transitionProperty: {
+        alter: "all", // Define the property to transition (all, background-color, etc.)
+      },
+      transitionDuration: {
+        alter: "100ms", // Define the delay (100ms in this case)
+      },
+      transitionTimingFunction: {
+        alter: "ease-in-out", // Define the easing
+      },
     },
   },
   plugins: [],
